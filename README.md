@@ -429,7 +429,7 @@ This happens when navigating between tabs on the same problem (e.g., Description
 
 ## 📂 File Structure
 
-```
+```text
 leetcode_extension/
 ├── manifest.json          # Extension configuration
 ├── background.js          # Service worker (SRS logic, data fetching)
@@ -493,7 +493,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- **Original Chrome Extension** by [Arun](https://github.com/arun-gg-1996) - check out the original repo [here](https://github.com/arun-gg-1996/leetflow)
+- **Original Chrome Extension** by [Arun](https://github.com/arun-gg-1996) - check out the [original repository](https://github.com/arun-gg-1996/leetflow)
 - **Spaced Repetition Algorithm** inspired by [Anki](https://apps.ankiweb.net/)
 - **Chart.js** for beautiful graphs
 - **LeetCode** for the amazing platform
@@ -520,6 +520,6 @@ If this extension helped you ace your coding interviews, please ⭐ star this re
 
 ---
 
-**Happy coding! 🚀**
+## Happy coding! 🚀
 
 *Master LeetCode one spaced repetition at a time.*
