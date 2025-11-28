@@ -11,30 +11,35 @@ A Firefox extension that helps you master LeetCode problems using **spaced repet
 ## ✨ Features
 
 ### 🧠 **Intelligent Spaced Repetition System (SRS)**
+
 - **Exponential scheduling**: Problems are reviewed at increasing intervals based on your confidence
 - **Smart load balancing**: Automatically spreads reviews across study days to prevent overload
 - **Leech detection**: Identifies problems you're struggling with (🩸 tag)
 - **Adaptive stages**: 9 progression stages (0-8) with customizable growth factors
 
 ### ⏱️ **Time Tracking & Analytics**
+
 - **On-page timer widget**: Tracks solve time for every problem
 - **Auto-confidence suggestions**: Pre-selects confidence level based on your solve time
 - **Performance analytics**: View fastest/slowest solves, average times, and trends
 - **Submission history**: Complete log of all attempts with timestamps
 
 ### 📊 **Progress Dashboard**
+
 - **Visual charts**: See your submission patterns over time (Chart.js)
 - **Topic analysis**: Identify strong/weak areas by topic and pattern
 - **Review forecast**: See upcoming reviews for today, this week, and this month
 - **Daily breakdown**: Detailed calendar view of scheduled reviews
 
 ### 🎨 **Customizable Workflow**
+
 - **Phase-based filtering**: Organize problems into learning phases
 - **Multi-filter system**: Filter by difficulty, topic, status, and search by name
 - **Study schedule**: Choose which days of the week you want to study
 - **Configurable thresholds**: Adjust SRS parameters to match your learning style
 
 ### 💾 **Data Management**
+
 - **Export/Import**: Backup and restore your progress as JSON files
 - **Undo feature**: Reverse accidental submissions (5-minute window)
 - **Soft reset**: Reschedule overdue reviews without losing progress
@@ -48,6 +53,7 @@ A Firefox extension that helps you master LeetCode problems using **spaced repet
 
 1. **Download the extension files**
    - Clone this repository or download as ZIP
+
    ```bash
    git clone https://github.com/kambleakash0/leetflow-firefox.git
    ```
@@ -107,8 +113,8 @@ The extension pulls problems from a Google Sheet. You have two options:
 
    | url | title | difficulty | topic | pattern | phase |
    |-----|-------|------------|-------|---------|-------|
-   | https://leetcode.com/problems/two-sum/ | Two Sum | Easy | Array | Basic Operations | PHASE 1 |
-   | https://leetcode.com/problems/add-two-numbers/ | Add Two Numbers | Medium | Linked List | Traversal | PHASE 1 |
+   | <https://leetcode.com/problems/two-sum/> | Two Sum | Easy | Array | Basic Operations | PHASE 1 |
+   | <https://leetcode.com/problems/add-two-numbers/> | Add Two Numbers | Medium | Linked List | Traversal | PHASE 1 |
 
    **Required columns:**
    - `url`: Full LeetCode problem URL
@@ -132,7 +138,7 @@ Navigate to **Settings** to configure:
    - **Conservative (1.5x)**: Review more frequently — better retention
    - **Balanced (1.7x)**: Middle ground
    - **Aggressive (2.0x)**: Review less often — cover more problems faster
-   
+
    *Example*: Problem intervals with 2.0x growth: 1 day → 2 days → 4 days → 8 days → 16 days
 
 2. **Maximum Review Interval**
@@ -189,6 +195,7 @@ When you open any LeetCode problem, you'll see a **Practice Tracker widget** in 
    - **Low**: Couldn't solve or heavily relied on solutions
 
 The extension will:
+
 - ✅ Save your solve time
 - ✅ Update your SRS stage
 - ✅ Schedule the next review date
@@ -199,6 +206,7 @@ The extension will:
 Click the extension icon to:
 
 #### **Filter Problems**
+
 - **By Phase**: Toggle checkboxes to show/hide learning phases
 - **By Difficulty**: Select Easy, Medium, Hard, or All
 - **By Topic**: Filter by specific topics from your sheet
@@ -206,7 +214,9 @@ Click the extension icon to:
 - **By Name**: Search for specific problems
 
 #### **View Problem Details**
+
 Each problem shows:
+
 - 🏷️ **Tags**: Difficulty, Topic > Pattern, Phase
 - 🎯 **Stage**: Current SRS stage (0-8)
 - 🩸 **Leech**: If you're struggling with it
@@ -214,6 +224,7 @@ Each problem shows:
 - 🔵 **Last Confidence**: Your last submission rating
 
 #### **Quick Actions**
+
 - **Click a problem** → Opens in new background tab
 - **⚙️ Settings** → Configure all parameters
 - **📊 Dashboard** → View analytics and stats
@@ -226,18 +237,22 @@ Each problem shows:
 Access via **📊 Dashboard** button to see:
 
 #### **📈 Submissions Over Time**
+
 - Line chart showing your problem-solving activity
 - Tracks submissions by date
 
 #### **💪 Strong Areas**
+
 - Top topics by "Mastered" count
 - Top patterns by "Mastered" count
 
 #### **🧠 Weak Areas**
+
 - Topics with most "Low" confidence submissions
 - Patterns you're struggling with
 
 #### **📅 Upcoming Reviews**
+
 - **Total Due**: All problems needing review
 - **Due Today**: What you should do today
 - **Next 7 Days**: This week's workload
@@ -245,6 +260,7 @@ Access via **📊 Dashboard** button to see:
 - **Daily Breakdown**: Calendar view of scheduled reviews
 
 #### **⏱️ Time Statistics**
+
 - **Average solve times** by difficulty
 - **Fastest solves** (your speed records)
 - **Slowest solves** (problems that took longest)
@@ -283,6 +299,7 @@ Assuming **2.0x growth factor** and **1 day starting interval**:
 ### **Leech System**
 
 A problem becomes a **🩸 Leech** when:
+
 - You've submitted "Low" confidence ≥ threshold times (default: 3)
 - AND you're still below Stage 3
 
@@ -291,6 +308,7 @@ A problem becomes a **🩸 Leech** when:
 ### **Smart Load Balancing**
 
 When scheduling reviews, the extension:
+
 1. Calculates the ideal review date based on SRS stage
 2. Checks if that day already has too many reviews (> max per day)
 3. If overloaded, shifts to the next available day
@@ -309,6 +327,7 @@ This prevents "review avalanches" and keeps your workload manageable!
 3. Saves `leetcode-tracker-backup-YYYY-MM-DD.json` to your Downloads
 
 **Export before**:
+
 - Resetting progress
 - Switching computers
 - Major setting changes
@@ -353,6 +372,7 @@ If you have too many overdue problems piled up:
 ### **"No problems found" in popup**
 
 **Solution**:
+
 1. Check that your Google Sheet URL is set in Settings
 2. Make sure you published the sheet as CSV (not HTML)
 3. Click **🔄 Refresh List** in the popup
@@ -361,12 +381,14 @@ If you have too many overdue problems piled up:
 ### **"Failed to fetch from Google Sheet" error**
 
 **Causes**:
+
 - Sheet URL is incorrect
 - Sheet is not published to web
 - Sheet columns are missing or misspelled
 - Network connection issue
 
 **Solution**:
+
 1. Re-publish your Google Sheet to web as CSV
 2. Copy the new URL
 3. Update in Settings
@@ -375,6 +397,7 @@ If you have too many overdue problems piled up:
 ### **Widget not showing on LeetCode**
 
 **Solution**:
+
 1. Make sure you're on a problem page (`leetcode.com/problems/...`)
 2. Refresh the LeetCode page
 3. Check if the extension is loaded in `about:debugging`
@@ -383,6 +406,7 @@ If you have too many overdue problems piled up:
 ### **Emojis showing as boxes or question marks**
 
 **Solution**:
+
 1. Update Firefox to the latest version
 2. The updated `popup.html` includes emoji font fixes
 3. Clear browser cache and reload extension
@@ -396,6 +420,7 @@ This happens when navigating between tabs on the same problem (e.g., Description
 ### **Reviews not scheduling on my study days**
 
 **Check**:
+
 1. Go to Settings → Study Schedule
 2. Make sure at least one day is checked
 3. If all days are unchecked, the extension defaults to all days
@@ -468,6 +493,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
+- **Original Chrome Extension** by [Arun](https://github.com/arun-gg-1996) - check out the original repo [here](https://github.com/arun-gg-1996/leetflow)
 - **Spaced Repetition Algorithm** inspired by [Anki](https://apps.ankiweb.net/)
 - **Chart.js** for beautiful graphs
 - **LeetCode** for the amazing platform
